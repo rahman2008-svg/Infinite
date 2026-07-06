@@ -1,0 +1,6 @@
+{
+  "name": "Infinity Number",
+  "description": "Learn numbers offline in Bangla, English, Arabic, and Hindi with interactive tracing, games, and quizzes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
