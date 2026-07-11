@@ -15,10 +15,9 @@ object AdsManager {
 
     // Unity Dashboard theke paoa Game ID
     private const val GAME_ID = "800084106"
-    private const val TEST_MODE = false // Release build e false rakhben
+    private const val TEST_MODE = true // Test build - release deoar age false korte hobe
 
-    // ⚠️ Ei 3 ta ID Unity Dashboard > Monetization > Placements theke
-    // full ID copy kore boshan
+    // Unity Dashboard > Monetization > Placements theke asha Placement ID
     const val BANNER_PLACEMENT_ID = "Banner_Android"
     const val INTERSTITIAL_PLACEMENT_ID = "Interstitial_Android"
     const val REWARDED_PLACEMENT_ID = "Rewarded_Android"
@@ -51,6 +50,8 @@ object AdsManager {
         )
     }
 
+    fun isReady(): Boolean = isInitialized
+
     // ---------- INTERSTITIAL ----------
 
     fun loadInterstitial() {
@@ -81,6 +82,7 @@ object AdsManager {
                     message: String
                 ) {
                     Log.e(TAG, "Interstitial show failed: $message")
+                    onClosed()
                     loadInterstitial()
                 }
 
