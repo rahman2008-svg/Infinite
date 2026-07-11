@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.ads.AdsManager
 import com.example.data.AppDatabase
 import com.example.data.NumberRepository
 import com.example.ui.AppContent
@@ -23,6 +24,9 @@ class MainActivity : ComponentActivity(), TextToSpeech.OnInitListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // Unity Ads SDK initialize
+        AdsManager.initialize(this)
 
         // Initialize SQLite Room DB
         val database = AppDatabase.getDatabase(this)
